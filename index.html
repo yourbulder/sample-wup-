@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Order Fresh Indian Food Online</title>
+<meta name="description" content="Fresh, authentic Indian food made with care. Browse the menu and order on WhatsApp.">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0b;--surface:#121212;--surface-2:#181818;--text:#f5f2eb;--muted:#aaa;--accent:#d7a85c;--border:rgba(255,255,255,.1);--sb:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.1}
+img{display:block;max-width:100%}button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{width:min(1400px,100%);margin:auto;padding:0 max(20px,env(safe-area-inset-left))}
+section{padding:clamp(56px,9vw,120px) 0}
+.sec-h{font-size:clamp(2rem,5.5vw,3.6rem);margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:99px;border:1px solid var(--border);background:transparent;font-weight:600;transition:transform .2s,background .2s}
+.btn:active{transform:scale(.98)}.btn.pri{background:var(--accent);border-color:var(--accent);color:#111}.btn[disabled]{opacity:.4;pointer-events:none}
+header{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top);transition:background .3s}
+header.solid{background:rgba(11,11,11,.92);backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700}
+.links{display:none;gap:28px;align-items:center}.links a{color:var(--muted);transition:color .2s}.links a:hover{color:var(--text)}
+.burger{width:48px;height:48px;background:none;border:0;font-size:1.6rem}
+#mnav{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:24px 32px;gap:6px;transform:translateY(-100%);transition:transform .45s cubic-bezier(.7,0,.2,1);visibility:hidden}
+#mnav.open{transform:none;visibility:visible}#mnav a{font:700 2rem 'Playfair Display',serif;padding:8px 0}
+#mclose{position:absolute;top:calc(12px + env(safe-area-inset-top));right:16px;background:none;border:0;font-size:2rem;width:48px;height:48px}
+.hero{position:relative;min-height:78svh;display:flex;align-items:flex-end;padding:0 0 56px;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:zoom 14s ease-out forwards}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 4%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.6))}
+.hero .wrap{position:relative;z-index:1}.hero h1{font-size:clamp(2.6rem,9vw,6.5rem);max-width:12ch;animation:up .9s .1s both}
+.hero p{max-width:46ch;color:#ddd;margin:18px 0 26px;animation:up .9s .25s both}.ctas{display:flex;gap:12px;flex-wrap:wrap;animation:up .9s .4s both}
+@keyframes zoom{from{transform:scale(1.03)}to{transform:scale(1.1)}}@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.cats{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -20px 28px;padding:0 20px}.cats::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 20px;border-radius:99px;border:1px solid var(--border);background:none;transition:.2s}.chip.on{background:var(--accent);color:#111;border-color:var(--accent);font-weight:600}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.card{background:var(--surface);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--border)}
+.card .im{aspect-ratio:4/3;overflow:hidden;cursor:pointer;position:relative;background:var(--surface-2)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.card:hover img{transform:scale(1.06)}
+.card .b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.meta{font-size:.8rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+.dot{width:12px;height:12px;border:1.5px solid #2e9e4f;display:inline-grid;place-items:center;border-radius:3px}.dot:after{content:"";width:6px;height:6px;border-radius:50%;background:#2e9e4f}.dot.nv{border-color:#c0392b}.dot.nv:after{background:#c0392b}
+.card h3{font-size:1.3rem}.card p{color:var(--muted);font-size:.92rem;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px}.price{font-size:1.25rem;font-weight:600}
+.sold{position:absolute;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;font-weight:600;letter-spacing:.1em}
+.empty{color:var(--muted);padding:40px 0}
+.offer{background:linear-gradient(120deg,#1a1408,var(--surface-2));border:1px solid var(--border);border-radius:24px;padding:clamp(28px,6vw,72px)}
+.offer h2{font-size:clamp(2.4rem,8vw,5.5rem);color:var(--accent)}
+.story{display:grid;gap:32px}.story img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px}.story p{color:var(--muted);max-width:52ch;font-size:1.05rem}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;cursor:zoom-in;transition:transform .5s}.gal img:hover{transform:scale(1.03)}
+.revs{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -20px;padding:0 20px}
+.rev{flex:none;width:min(84%,360px);scroll-snap-align:start;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px}.rev .st{color:var(--accent)}.rev p{margin:10px 0 14px;font-family:'Playfair Display',serif;font-size:1.15rem}
+.contact{display:grid;gap:24px}.contact dt{color:var(--muted);font-size:.85rem}.contact dd{margin-bottom:14px;font-size:1.1rem}
+footer{border-top:1px solid var(--border);padding:32px 0 calc(32px + 70px);color:var(--muted);font-size:.9rem}
+.float{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:calc(86px + var(--sb));z-index:30;display:flex;flex-direction:column;gap:10px}
+.float a{width:48px;height:48px;border-radius:50%;background:var(--surface-2);border:1px solid var(--border);display:grid;place-items:center;font-size:1.2rem}
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + var(--sb));transform:translateY(120%);transition:transform .35s}#bar.show{transform:none}
+#bar button{width:100%;min-height:56px;border-radius:16px;border:0;background:var(--accent);color:#111;font-weight:600;display:flex;justify-content:space-between;align-items:center;padding:0 22px}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:70;opacity:0;visibility:hidden;transition:.3s}#ov.open{opacity:1;visibility:visible}
+#sheet{position:fixed;left:0;right:0;bottom:0;z-index:80;max-height:92dvh;overflow-y:auto;background:var(--surface);border-radius:24px 24px 0 0;padding-bottom:var(--sb);transform:translateY(105%);transition:transform .4s cubic-bezier(.2,.8,.2,1);visibility:hidden}#sheet.open{transform:none;visibility:visible}
+#sheet .in{padding:22px 20px 24px;display:flex;flex-direction:column;gap:12px}#sheet .hero-im{width:100%;aspect-ratio:16/10;object-fit:cover}
+.x{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.6);font-size:1.2rem;z-index:2}
+.qty{display:flex;align-items:center;gap:14px}.qty button{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:none;font-size:1.3rem}
+input,textarea{width:100%;min-height:48px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);font:inherit}
+label{font-size:.85rem;color:var(--muted);display:block;margin-bottom:4px}.line{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--border)}
+#toast{position:fixed;left:50%;top:calc(76px + env(safe-area-inset-top));transform:translate(-50%,-20px);background:var(--text);color:#111;padding:12px 20px;border-radius:99px;z-index:100;opacity:0;transition:.3s;pointer-events:none;max-width:90vw;font-weight:500}#toast.show{opacity:1;transform:translate(-50%,0)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:90;display:none;place-items:center;padding:20px}#lb.open{display:grid}#lb img{max-height:90dvh;object-fit:contain}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(min-width:769px){.links{display:flex}.burger{display:none}.float{bottom:24px}.gal{grid-template-columns:repeat(4,1fr)}.gal img:nth-child(3n+1){grid-row:span 2;aspect-ratio:auto;height:100%}
+.story{grid-template-columns:1fr 1.2fr;align-items:center;gap:72px}.contact{grid-template-columns:1fr 1fr}.revs{margin:0;padding:0}
+#bar{left:auto;right:24px;bottom:24px;width:360px;padding:0}#sheet{left:50%;right:auto;bottom:auto;top:50%;width:min(560px,92vw);border-radius:24px;transform:translate(-50%,-46%);opacity:0}#sheet.open{transform:translate(-50%,-50%);opacity:1}}
+@media(prefers-reduced-motion:reduce){*,:after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<header id="hd"><div class="wrap nav"><a href="#top" class="logo" id="logo"></a>
+<nav class="links" aria-label="Main"><a href="#menu">Menu</a><a href="#story">Story</a><a href="#offers">Offers</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><button class="btn pri" data-cart>Order</button></nav>
+<button class="burger" id="burger" aria-label="Open menu">☰</button></div></header>
+<nav id="mnav" aria-label="Mobile"><button id="mclose" aria-label="Close menu">✕</button><a href="#top">Home</a><a href="#menu">Menu</a><a href="#story">Story</a><a href="#offers">Offers</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a><a href="#menu" style="color:var(--accent)">Order Now</a></nav>
+<main id="top">
+<div class="hero"><img id="heroImg" alt="" fetchpriority="high" src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=1600&q=80"><div class="wrap"><h1 id="hTitle"></h1><p id="hSub"></p><div class="ctas"><a class="btn pri" href="#menu">Explore menu</a><button class="btn" data-cart>Order now</button></div></div></div>
+<section id="menu"><div class="wrap"><h2 class="sec-h rv">Our menu</h2><div class="cats" id="cats" role="tablist"></div><div class="grid" id="grid"></div></div></section>
+<section id="offers" style="padding-top:0"><div class="wrap" id="offerBox"></div></section>
+<section id="story"><div class="wrap story"><img class="rv" loading="lazy" alt="Our kitchen" src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=900&q=80"><div class="rv"><h2 class="sec-h">Great food doesn't need to shout.</h2><p id="storyTxt"></p></div></div></section>
+<section id="gallery"><div class="wrap"><h2 class="sec-h rv">Gallery</h2><div class="gal" id="gal"></div></div></section>
+<section id="reviews"><div class="wrap"><h2 class="sec-h rv">What guests say</h2><div class="revs" id="revs"></div></div></section>
+<section id="contact"><div class="wrap contact"><div class="rv"><h2 class="sec-h">Visit us</h2><div class="ctas"><a class="btn pri" id="callBtn">Call now</a><a class="btn" id="waBtn" target="_blank" rel="noopener">WhatsApp</a><a class="btn" id="dirBtn" target="_blank" rel="noopener">Get directions</a></div></div>
+<dl class="rv"><dt>Address</dt><dd id="cAddr"></dd><dt>Opening hours</dt><dd id="cHrs"></dd><dt>Phone</dt><dd id="cPh"></dd></dl></div></section>
+</main>
+<footer><div class="wrap"><strong id="fName"></strong><p>Fresh food, made with care. Order on WhatsApp.</p><p>© <span id="yr"></span> All rights reserved.</p></div></footer>
+<div class="float"><a id="fWa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a><a id="fCall" href="#" aria-label="Call">📞</a></div>
+<div id="bar"><button id="barBtn" aria-label="View order"><span id="barTxt"></span><b>View order</b></button></div>
+<div id="ov"></div><div id="sheet" role="dialog" aria-modal="true"></div><div id="toast" role="status"></div><div id="lb"><img alt=""></div>
+<script id="ld" type="application/ld+json"></script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getDatabase,ref,onValue} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
+import {getAnalytics,isSupported} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+const firebaseConfig={apiKey:"AIzaSyA5TuR7N5A1DegDeQAOWpZCdLYq_3Rld2A",authDomain:"qr-code-base.firebaseapp.com",databaseURL:"https://qr-code-base-default-rtdb.firebaseio.com",projectId:"qr-code-base",storageBucket:"qr-code-base.firebasestorage.app",messagingSenderId:"1084109573340",appId:"1:1084109573340:web:7b439d17b71c86756bf819",measurementId:"G-NWDT0S8EVS"};
+const fb=initializeApp(firebaseConfig),db=getDatabase(fb);
+isSupported().then(ok=>ok&&getAnalytics(fb)).catch(()=>{});
+const U=(id,w=800)=>`https://images.unsplash.com/${id}?w=${w}&q=80`;
+const D={settings:{name:'Spice Route Kitchen',phone:'9811353658',whatsapp:'9811353658',address:'Shop 12, Main Market, Faridabad, Haryana',hours:'Mon–Sun, 11:00 AM – 11:00 PM',heroTitle:'Food that makes you stop.',heroSub:'Authentic, fresh and made with care. Order in under a minute on WhatsApp.',accent:'#d7a85c',story:'We cook slowly, season carefully and serve every plate the way we would at home. Small kitchen, fresh ingredients, no shortcuts.'},
+menu:[{id:1,name:'Butter Chicken',desc:'Slow cooked tomato gravy, butter and aromatic spices.',price:299,cat:'Main Course',img:U('photo-1603894584373-5ac82b2ae398'),veg:false,spice:2,avail:true},
+{id:2,name:'Chicken Biryani',desc:'Long grain basmati layered with marinated chicken, dum cooked.',price:250,cat:'Biryani',img:U('photo-1563379091339-03b21ab4a4f8'),veg:false,spice:3,avail:true},
+{id:3,name:'Paneer Tikka',desc:'Charred cottage cheese with mint chutney.',price:220,cat:'Starters',img:U('photo-1567188040759-fb8a883dc6d8'),veg:true,spice:2,avail:true},
+{id:4,name:'Garlic Naan',desc:'Tandoor baked, brushed with garlic butter.',price:80,cat:'Main Course',img:U('photo-1626074353765-517a681e40be'),veg:true,spice:0,avail:true},
+{id:5,name:'Masala Chai',desc:'Ginger, cardamom and strong tea, served hot.',price:40,cat:'Drinks',img:U('photo-1561336313-0bd5e0b27ec8'),veg:true,spice:0,avail:true},
+{id:6,name:'Gulab Jamun',desc:'Warm milk dumplings in rose syrup.',price:90,cat:'Desserts',img:U('photo-1666190092159-3171cf0fbb12'),veg:true,spice:0,avail:false}],
+reviews:[{id:1,name:'Rahul',stars:5,text:'Absolutely delicious. The biryani was amazing.'},{id:2,name:'Priya',stars:5,text:'Fresh, hot and on time. Ordering on WhatsApp was so easy.'}],
+gallery:[U('photo-1631452180519-c014fe946bc7',700),U('photo-1585937421612-70a008356fbe',700),U('photo-1589302168068-964664d93dc0',700),U('photo-1596797038530-2c107229654b',700)],
+offers:[{id:1,title:'20% off',text:"Today's special on selected items. Limited time."}]};
+const arr=v=>Array.isArray(v)?v.filter(x=>x!=null):v&&typeof v==='object'?Object.values(v):[];
+let S,M,R,G,O;
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const WA='919811353658',cart={};let cat='All';
+const safeImg=u=>/^https?:\/\//i.test(u)?esc(u):'';
+const money=n=>'₹'+Number(n).toLocaleString('en-IN');
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2400)}
+// static content
+function apply(v){const d=v||{};S={...D.settings,...(d.settings||{})};M=v?arr(d.menu):D.menu;R=v?arr(d.reviews):D.reviews;G=v?arr(d.gallery):D.gallery;O=v?arr(d.offers):D.offers;
+document.documentElement.style.setProperty('--accent',S.accent);document.title=S.name+' | Order Food Online';
+$('#logo').textContent=$('#fName').textContent=S.name;$('#hTitle').textContent=S.heroTitle;$('#hSub').textContent=S.heroSub;$('#storyTxt').textContent=S.story;
+$('#cAddr').textContent=S.address;$('#cHrs').textContent=S.hours;$('#cPh').textContent=S.phone;$('#yr').textContent=new Date().getFullYear();
+const tel='tel:+91'+S.phone.replace(/\D/g,'').slice(-10);$('#callBtn').href=$('#fCall').href=tel;$('#waBtn').href=$('#fWa').href='https://wa.me/'+WA;
+$('#dirBtn').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(S.address);
+$('#offerBox').innerHTML=O.length?O.map(o=>`<div class="offer rv"><p style="color:var(--muted)">Today's special</p><h2>${esc(o.title)}</h2><p style="margin:12px 0 22px;max-width:40ch">${esc(o.text)}</p><button class="btn pri" data-cart>Order now</button></div>`).join(''):'';
+$('#gal').innerHTML=G.length?G.map(u=>`<img loading="lazy" decoding="async" alt="Food photo" src="${safeImg(u)}" onerror="this.remove()">`).join(''):'<p class="empty">Gallery coming soon.</p>';
+$('#revs').innerHTML=R.map(r=>`<div class="rev"><div class="st">${'★'.repeat(r.stars||5)}</div><p>"${esc(r.text)}"</p><span style="color:var(--muted)">${esc(r.name)}</span></div>`).join('');
+$('#ld').textContent=JSON.stringify({'@context':'https://schema.org','@type':'Restaurant',name:S.name,telephone:'+91'+S.phone,address:S.address,openingHours:S.hours,servesCuisine:'Indian'});
+if(!['All',...M.map(m=>m.cat)].includes(cat))cat='All';renderMenu();updBar();$('#reviews').style.display=R.length?'':'none';document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el))}
+// menu
+function renderMenu(){const cats=['All',...new Set(M.map(m=>m.cat))];
+$('#cats').innerHTML=cats.map(c=>`<button class="chip${c===cat?' on':''}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
+const list=M.filter(m=>cat==='All'||m.cat===cat);
+$('#grid').innerHTML=list.length?list.map(m=>`<article class="card rv in"><div class="im" data-open="${m.id}" role="button" tabindex="0" aria-label="View ${esc(m.name)}"><img loading="lazy" decoding="async" alt="${esc(m.name)}" src="${safeImg(m.img)}" onerror="this.style.opacity=.15">${m.avail?'':'<div class="sold">SOLD OUT</div>'}</div><div class="b"><div class="meta"><span class="dot${m.veg?'':' nv'}" title="${m.veg?'Veg':'Non-veg'}"></span>${esc(m.cat)}${m.spice?' · '+'🌶'.repeat(m.spice):''}</div><h3>${esc(m.name)}</h3><p>${esc(m.desc)}</p><div class="row"><span class="price">${money(m.price)}</span><button class="btn pri" data-add="${m.id}" ${m.avail?'':'disabled'}>${m.avail?'Add':'Sold out'}</button></div></div></article>`).join(''):'<p class="empty">No dishes available yet. Check back soon.</p>'}
+// cart
+const items=()=>Object.entries(cart).map(([id,q])=>({...M.find(m=>m.id==id),q})).filter(i=>i.name);
+const total=()=>items().reduce((s,i)=>s+i.price*i.q,0),count=()=>items().reduce((s,i)=>s+i.q,0);
+function updBar(){const c=count();$('#bar').classList.toggle('show',c>0);$('#barTxt').textContent=`${c} item${c>1?'s':''} · ${money(total())}`}
+function add(id,q=1){cart[id]=(cart[id]||0)+q;updBar();toast('Added to your order')}
+const sheet=$('#sheet');let lastFocus;
+function openSheet(html){lastFocus=document.activeElement;sheet.innerHTML=`<button class="x" aria-label="Close" data-close>✕</button>`+html;sheet.classList.add('open');$('#ov').classList.add('open');document.body.style.overflow='hidden';sheet.querySelector('input,button:not(.x)')?.focus?.()}
+function closeAll(){sheet.classList.remove('open');$('#ov').classList.remove('open');$('#mnav').classList.remove('open');$('#lb').classList.remove('open');document.body.style.overflow='';lastFocus?.focus?.()}
+function detail(id){const m=M.find(x=>x.id==id);if(!m)return;let q=1;
+openSheet(`<img class="hero-im" alt="${esc(m.name)}" src="${safeImg(m.img)}"><div class="in"><div class="meta"><span class="dot${m.veg?'':' nv'}"></span>${m.veg?'Veg':'Non-veg'}${m.spice?' · Spice '+'🌶'.repeat(m.spice):''}</div><h3 style="font-size:1.8rem">${esc(m.name)}</h3><div class="price">${money(m.price)}</div><p style="color:var(--muted)">${esc(m.desc)}</p><div class="qty"><button aria-label="Less" id="qm">−</button><b id="qv">1</b><button aria-label="More" id="qp">+</button></div><button class="btn pri" id="qa" ${m.avail?'':'disabled'}>${m.avail?'Add to order · '+money(m.price):'Sold out'}</button></div>`);
+const u=()=>{$('#qv').textContent=q;$('#qa').textContent='Add to order · '+money(m.price*q)};
+$('#qm').onclick=()=>{q=Math.max(1,q-1);u()};$('#qp').onclick=()=>{q=Math.min(20,q+1);u()};$('#qa').onclick=()=>{add(m.id,q);closeAll()}}
+function openCart(){const it=items();if(!it.length){toast('Add a dish to start your order');$('#menu').scrollIntoView();return}
+openSheet(`<div class="in"><h3 style="font-size:1.7rem">Your order</h3>${it.map(i=>`<div class="line"><span>${i.q} × ${esc(i.name)}</span><span>${money(i.price*i.q)} <button data-rm="${i.id}" aria-label="Remove ${esc(i.name)}" style="background:none;border:0;padding:8px">✕</button></span></div>`).join('')}<div class="line"><b>Total</b><b>${money(total())}</b></div>
+<div><label for="cn">Your name</label><input id="cn" autocomplete="name"></div><div><label for="cm">Mobile number</label><input id="cm" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10"></div><div><label for="ca">Delivery address</label><textarea id="ca" rows="2"></textarea></div><div><label for="ci">Special instructions</label><textarea id="ci" rows="2"></textarea></div><button class="btn pri" id="go">Order on WhatsApp</button></div>`);
+$('#go').onclick=send}
+function send(){const n=$('#cn').value.trim(),m=$('#cm').value.replace(/\D/g,''),a=$('#ca').value.trim(),i=$('#ci').value.trim();
+if(!n)return toast('Please enter your name');if(!/^[6-9]\d{9}$/.test(m))return toast('Enter a valid 10-digit mobile number');if(!a)return toast('Please enter your address');
+const msg=`Hello! I would like to place an order.\n\nCustomer Name: ${n}\nMobile: ${m}\n\nOrder:\n${items().map(x=>`${x.q} × ${x.name} — ${money(x.price*x.q)}`).join('\n')}\n\nTotal Amount: ${money(total())}\n\nDelivery Address:\n${a}\n\nSpecial Instructions:\n${i||'None'}\n\nPlease confirm my order.\nThank you!`;
+window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');toast('WhatsApp order prepared')}
+// events
+document.addEventListener('click',e=>{const t=e.target.closest('[data-c],[data-add],[data-open],[data-cart],[data-rm],[data-close],a[href^="#"]');if(!t)return;
+if(t.dataset.c){cat=t.dataset.c;renderMenu()}else if(t.dataset.add)add(+t.dataset.add);else if(t.dataset.open)detail(t.dataset.open);
+else if(t.hasAttribute('data-cart')){closeAll();openCart()}else if(t.dataset.rm){delete cart[t.dataset.rm];updBar();items().length?openCart():closeAll()}
+else if(t.hasAttribute('data-close'))closeAll();else if(t.closest('#mnav'))closeAll()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();if((e.key==='Enter'||e.key===' ')&&e.target.dataset?.open){e.preventDefault();detail(e.target.dataset.open)}});
+$('#ov').onclick=closeAll;$('#barBtn').onclick=openCart;$('#burger').onclick=()=>{$('#mnav').classList.add('open');document.body.style.overflow='hidden'};$('#mclose').onclick=closeAll;
+$('#gal').onclick=e=>{if(e.target.tagName==='IMG'){$('#lb img').src=e.target.src;$('#lb').classList.add('open')}};$('#lb').onclick=closeAll;
+addEventListener('scroll',()=>$('#hd').classList.toggle('solid',scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// live data from Firebase Realtime Database (cached for instant repeat visits)
+let applied=false,cached=null;const CK='foodSiteCache';try{cached=JSON.parse(localStorage.getItem(CK))}catch(e){}
+if(cached){apply(cached);applied=true}else{$('#grid').innerHTML='<p class="empty">Loading menu…</p>';setTimeout(()=>{if(!applied){apply(null);applied=true}},3000)}
+onValue(ref(db,'site'),s=>{const v=s.exists()?s.val():null;try{localStorage.setItem(CK,JSON.stringify(v))}catch(e){}apply(v);applied=true},()=>{if(!applied){apply(cached);applied=true}});
+</script></body></html>
